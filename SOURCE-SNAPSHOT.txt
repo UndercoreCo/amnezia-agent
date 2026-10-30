@@ -1,0 +1,4 @@
+Source preservation snapshot: 2026-10-31
+
+This publication preserves source code, not a claim of a newly tested production release.
+Private environment files, databases, customer/VPN credentials, build caches, signing material and internal operations journals are retained only in the owner's private local backup. Automatic deployment workflows are excluded.

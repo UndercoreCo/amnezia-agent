@@ -1,0 +1,39 @@
+[Unit]
+Description=Undercore fixed AWG runtime executor
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=notify
+NotifyAccess=main
+WorkingDirectory=/opt/amnezia-config-api/current
+ExecStartPre=/usr/bin/docker --host unix:///run/docker.sock start undercore-awg-api
+ExecStart=/opt/amnezia-config-api/venv/bin/python -m app.runtime
+ExecStopPost=/usr/bin/docker --host unix:///run/docker.sock stop --time 2 undercore-awg-api
+# Fail closed; operator investigates before restarting the runtime and state agent.
+Restart=no
+WatchdogSec=90
+TimeoutStartSec=90
+TimeoutStopSec=20
+UMask=0077
+Environment=DOCKER_CONFIG=/nonexistent
+UnsetEnvironment=DOCKER_HOST DOCKER_CONTEXT DOCKER_TLS_VERIFY DOCKER_CERT_PATH DOCKER_TLS
+NoNewPrivileges=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/run/amnezia-config-runtime /run/docker.sock
+InaccessiblePaths=/var/lib/amnezia-config-api /etc/amnezia-config-api/encryption.key /etc/amnezia-config-api/http.token
+RuntimeDirectory=amnezia-config-runtime
+RuntimeDirectoryMode=0750
+RestrictAddressFamilies=AF_UNIX
+LimitCORE=0
+
+[Install]
+WantedBy=multi-user.target

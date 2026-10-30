@@ -1,0 +1,53 @@
+{
+  "amnezia": {
+    "GET /v1/clients": "18c4e8020b043219ca5e828c1ef3d7b219aae647f1d9e9b63b6e1b2f456dc5b3",
+    "GET /v1/clients/{client_id}": "252303afe6832e75a9e93df522aaf41e6187dae9511debc42dc0c19f55ecab26",
+    "GET /v1/clients/{client_id}/amnezia": "291517ef56ec922269c16c1db66197125be6224b3bf65701312a899a929b1019",
+    "GET /v1/clients/{client_id}/configuration": "a1f4bb3cad8740872ec7deff86cba05aec5e341441fc8ac4fd65db10216508c6",
+    "GET /v1/health": "b8726c1bc2a7c04162ad273348a9bff947013efd41dc300a98185a7a2f941429",
+    "POST /v1/clients": "c653e18cbdbd735979f7add38d3846ea7ea130aaad6dda4bca6e9acc34362350",
+    "POST /v1/clients/{client_id}/disable": "ff985a63bba6699e90e5640d864b6b79ae4b4b7dee7479a3dc31bd8cf17a9f60",
+    "POST /v1/clients/{client_id}/enable": "86f43f559041a48d2b530a5c7d7a2244eed98ea8624ae1a1abae4ca224f72255",
+    "POST /v1/clients/{client_id}/renew": "d6f9e1243541505b3eeaa4726ab00a6f09dbbb71b2249280493957733898eaa4",
+    "POST /v1/clients/{client_id}/replace": "efa0780cef6aad71a08039c3df80ca3536e946d6c9edc6f4b900912f298d7ccb",
+    "security": "e414d970031e6e06895fcb49588717b16a241ee468220c9f262db7f9d0ce5de4"
+  },
+  "platform": {
+    "GET /api/internal/notifications": "c381cf7ff0fc4374db0fd5e3ee2f5dbaf8cc8a62d299043525ef64d2f30b510d",
+    "GET /api/internal/notifications/summary": "b4fa93ea0db37534ce5fb61ce9e7e6a0ac1fa66b8123fa5d6d8738aa8d5a6336",
+    "GET /api/internal/notifications/{userNotification}": "1bb23ee77d5ce8d141701d19abe369d9194ccb969767f54efed6b1034cc2caf2",
+    "GET /api/internal/vpn": "8ba0a7f7ecfd1e5a41c9330adef5997d15ea18fc652828e48439075fdb6cdef6",
+    "GET /api/internal/vpn/configs/{vpnConfig}": "5f9f57dc582ba5f4b7025c3d90521175d53e85b97277d9e728eb8caae6ceaf3d",
+    "GET /api/internal/vpn/configs/{vpnConfig}/amnezia": "dc6c7e0afb5be88349a847a56ca18f6bd84dd02bcff39342bd65760f0afca006",
+    "GET /api/internal/vpn/configs/{vpnConfig}/configuration": "cf15d45f5ca0b042ba356dc8decffb3ff43b32f0a8f2681ff3fbb36e76480e18",
+    "GET /api/mobile/v1/articles": "7f97c23d65445dd024a334cab4eff74a0bbee12da52708431dd5d070805fd392",
+    "GET /api/mobile/v1/articles/{id}": "47afd4f35a49212a0157679a5867e4859cf61c4c98475932dd73ed43afcdf5b5",
+    "GET /api/mobile/v1/bootstrap": "a4687cb01e8041ed0f681a9ea93b672158d2dd24fc23231a3e63c4cd45dfd862",
+    "GET /api/mobile/v1/challenge": "4e1ff7021586b9a5a3a01681a6e201c24d3f18ca7a3ee48a1a708ab42bfb40f2",
+    "GET /me": "33f20c6d0b7f9b333507bf764efe52a89f27866bf6ca03dd8076da7c4126d619",
+    "PATCH /api/internal/notifications/{userNotification}/read": "36b8ffabc2d0c77aea3b2bee21eff7f5f83ab631453a1b52bae8ee38cdd381e3",
+    "PATCH /api/internal/vpn/configs/{vpnConfig}": "5e407af7d7f48ef9882c822216ea453fa3d1da9c68059d3077c2fbb243c9f417",
+    "POST /api/internal/email/verification-notification": "284093804e537e6f0966b8cfd6ffc2c06aea4a6487dc377bc5cf92b6b02f349f",
+    "POST /api/internal/email/verify": "7aa3082d34ad42c1f80314f579d658ae896a3c15bc8deb02b6e7792bca1403e0",
+    "POST /api/internal/notifications/read-all": "5a16a574f5220afe45cb3eb51c05e57955f953499de69ce2bea747165895d1b4",
+    "POST /api/internal/vpn/configs/{vpnConfig}/connection-manifest": "5e80ab7e42676144a91c98c60748da8026ba90e0fb46816d0e4c51258ff6d12a",
+    "POST /api/internal/vpn/configs/{vpnConfig}/connection-recovery": "101b41c65c0b73788e619d8ef5ed9ed122b3a21c644247671871caf61eea5d77",
+    "POST /api/internal/vpn/devices/connect": "4e86f3bad04255c6490e155a41c6ae408b5b6a726c3cfe753ee356ff3e2c455b",
+    "POST /login": "57e5bead0fb0023ee92a1de781705646c2b52264b8645cff6b0e9ca1962c06c4",
+    "POST /logout": "955c3540a007ad30b6cc7b1dc83364c5560116b1cce37ca46f819dba2e7dd2e7",
+    "POST /register": "bda66f8d7b8c849cd840b945585a1ad0336b01573ba00919a6371d3eab720632",
+    "security": "2b62f04b7c79ef7037d3b2adf39c141607c4495f260d028b11773feeb74c0303"
+  },
+  "wireguard": {
+    "GET /v1/clients": "5a5c501067396fd3a6fc0f2cac1b7a9e8af047e0a1375b4a4c979fdbaf35163b",
+    "GET /v1/clients/{client_id}": "bc8e5982a8b3675c93eaacc3295f1c81b6274319a3d91f7a9fd4e35c6b5ef81c",
+    "GET /v1/clients/{client_id}/configuration": "5da50062a6b6b3ed804ad1aa8238de717cc2e58c47080691412521be5dfa9366",
+    "GET /v1/health": "7d7d9cc436ebfa6d0056fa30c835415c91a078d0bce9ef17992a6c40d3c26a09",
+    "POST /v1/clients": "0e29dbd509eed5f444b0b2dfdb76fdfc41aaeca147491bf364074c3e1bf21bc7",
+    "POST /v1/clients/{client_id}/disable": "803fd908592bad18f45af7835e348c088161389556ad618e97a94a3be0d14fb9",
+    "POST /v1/clients/{client_id}/enable": "44fa92cde13af105c8d8e2ad2b3dd248a802f369702d5e347d7ffb2904448077",
+    "POST /v1/clients/{client_id}/renew": "beb7c24e8daac3b0b24f1ff0dcc34ca7d173459c51892bb804b98a818d158ff5",
+    "POST /v1/clients/{client_id}/replace": "0c50277cfe7ac6d5777d38e7f3392e6dac05900ed88509b61f1ff07ea937de01",
+    "security": "59423e42a37b87d28d1e6efff65792080588e4d65fba0efad82cbeee624e22c8"
+  }
+}

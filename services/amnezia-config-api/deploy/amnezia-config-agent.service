@@ -1,0 +1,41 @@
+[Unit]
+Description=Undercore Amnezia provisioning and expiry agent
+Requires=amnezia-config-runtime.service
+After=amnezia-config-runtime.service network-online.target
+
+[Service]
+User=awg-agent
+Group=awg-agent
+SupplementaryGroups=awg-api
+Type=notify
+NotifyAccess=main
+WorkingDirectory=/opt/amnezia-config-api/current
+ExecStart=/opt/amnezia-config-api/venv/bin/python -m app.agent
+ExecStopPost=/opt/amnezia-config-api/venv/bin/python -m app.runtime_client
+Restart=on-failure
+RestartSec=10
+WatchdogSec=90
+TimeoutStartSec=90
+TimeoutStopSec=20
+UMask=0077
+NoNewPrivileges=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/amnezia-config-api /run/amnezia-config-api
+InaccessiblePaths=/run/docker.sock /etc/amnezia-config-api/node.json /etc/amnezia-config-api/awg0.conf /etc/amnezia-config-api/http.token
+RuntimeDirectory=amnezia-config-api
+RuntimeDirectoryMode=0750
+LimitCORE=0
+RestrictAddressFamilies=AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,31 @@
+[Unit]
+Description=Undercore Amnezia authenticated HTTP API
+After=network.target amnezia-config-agent.service
+
+[Service]
+User=awg-api
+Group=awg-api
+WorkingDirectory=/opt/amnezia-config-api/current
+ExecStart=/opt/amnezia-config-api/venv/bin/uvicorn app.main:create_app --factory --host 127.0.0.1 --port 8791 --workers 1 --no-access-log
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/run/amnezia-config-api
+InaccessiblePaths=/var/lib/amnezia-config-api /run/docker.sock -/run/amnezia-config-runtime /etc/amnezia-config-api/encryption.key /etc/amnezia-config-api/node.json /etc/amnezia-config-api/awg0.conf
+LimitCORE=0
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

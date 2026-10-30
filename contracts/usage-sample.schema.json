@@ -1,0 +1,68 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "counter_epoch": {
+      "pattern": "^[a-f0-9]{32}$",
+      "title": "Counter Epoch",
+      "type": "string"
+    },
+    "sequence": {
+      "maximum": 9223372036854775807,
+      "minimum": 1,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "measurement_basis": {
+      "const": "awg-transfer-v1",
+      "title": "Measurement Basis",
+      "type": "string"
+    },
+    "observed_at": {
+      "title": "Observed At",
+      "type": "string"
+    },
+    "started_at": {
+      "title": "Started At",
+      "type": "string"
+    },
+    "download_bytes": {
+      "title": "Download Bytes",
+      "type": "string"
+    },
+    "upload_bytes": {
+      "title": "Upload Bytes",
+      "type": "string"
+    },
+    "baseline_download_bytes": {
+      "title": "Baseline Download Bytes",
+      "type": "string"
+    },
+    "baseline_upload_bytes": {
+      "title": "Baseline Upload Bytes",
+      "type": "string"
+    },
+    "is_final": {
+      "title": "Is Final",
+      "type": "boolean"
+    },
+    "complete": {
+      "title": "Complete",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "counter_epoch",
+    "sequence",
+    "measurement_basis",
+    "observed_at",
+    "started_at",
+    "download_bytes",
+    "upload_bytes",
+    "baseline_download_bytes",
+    "baseline_upload_bytes",
+    "is_final",
+    "complete"
+  ],
+  "title": "UsageSample",
+  "type": "object"
+}
